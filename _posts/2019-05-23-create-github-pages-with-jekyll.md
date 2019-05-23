@@ -91,7 +91,9 @@ gem install bundler
 source 'http://rubygems.org'
 gem 'github-pages', group: :jekyll_plugins
 ~~~~
-* run ```bundle install``` to download jekyll plug-ing gems. It shows jekyll version to install.
+
+* run ```bundle install``` to download jekyll plug-ing gems. It shows jekyll version to install
+
 ~~~~
 G:\project\github_pages>bundle install
 Fetching gem metadata from http://rubygems.org/... done
@@ -140,20 +142,20 @@ Ruby Sass has reached end-of-life and should no longer be used.
 Post-install message from nokogiri:
 Nokogiri is built with the packaged libraries: libxml2-2.9.9, libxslt-1.1.33, zlib-1.2.11, libiconv-1.15.
 Post-install message from html-pipeline:
-
+-------------------------------------------------
 Thank you for installing html-pipeline!
 You must bundle Filter gem dependencies.
 See html-pipeline README.md for more details.
 https://github.com/jch/html-pipeline#dependencies
-
+-------------------------------------------------
+https://github.com/jch/html-pipeline#dependencies
 ~~~~
+
 ## 2.2 create a jekyll site
 * create a jekyll site in myblog directory
+
 ~~~~
-bundle exec jekyll new myblog
-~~~~
-~~~~
->bundle exec jekyll new myblog
+G:\project\github_pages>bundle exec jekyll new myblog
 Running bundle install in G:/project/github_pages/myblog...
   Bundler: Using concurrent-ruby 1.1.5
   Bundler: Using i18n 0.9.5
@@ -187,9 +189,11 @@ G:\project\github_pages\myblog>dir
 
 ~~~~
 * execute jekyll
+
 ~~~~
->bundle exec jekyll serve
+bundle exec jekyll serve
 ~~~~
+
 ~~~~
 G:\project\github_pages\myblog>bundle exec jekyll serve
 Configuration file: G:/project/github_pages/myblog/_config.yml
@@ -231,21 +235,12 @@ G:\project\github_pages\myblog>dir
 ![git for windows install](/myblog/assets/images/git/create_myblog_repository.png)
 
 ## 2.4 push local jekyll site to the remote GitHub repository
+
 ~~~~
 G:\project\github_pages\myblog>git init
 Initialized empty Git repository in G:/project/github_pages/myblog/.git/
 
 G:\project\github_pages\myblog>git add .
-warning: LF will be replaced by CRLF in .gitignore.
-The file will have its original line endings in your working directory.
-warning: LF will be replaced by CRLF in 404.html.
-The file will have its original line endings in your working directory.
-warning: LF will be replaced by CRLF in _config.yml.
-The file will have its original line endings in your working directory.
-warning: LF will be replaced by CRLF in about.md.
-The file will have its original line endings in your working directory.
-warning: LF will be replaced by CRLF in index.md.
-The file will have its original line endings in your working directory.
 
 G:\project\github_pages\myblog>git commit -m "initial upload"
 [master (root-commit) 8e948fc] initial upload
@@ -276,8 +271,7 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 ![enable git pages](/myblog/assets/images/git/enable_github_pages.png)
 
 
-# Work With GitHub Repository
+# 3. Change jekyll Theme to minimal-mistakes
 
-# Change jekyll Theme
-
-# Customize Theme 
+# 4. Customize Site
+## 
