@@ -84,19 +84,19 @@ gem install bundler
 ~~~~
 ![install gem bundler](/myblog/assets/images/ruby/install_bundler.png)
 
-# 2. Prepare jekyll 
-## 2.1 install jekyll plugin gems
-* Create ```Gemfile``` with below
+# 2. Install jekyll
+## 2.1 download jekyll plugin gems
+* create ```Gemfile``` and add two lines below
 ~~~~
 source 'http://rubygems.org'
 gem 'github-pages', group: :jekyll_plugins
 ~~~~
-* run ```bundle install``` to download jekyll plug-ing gems
+* run ```bundle install``` to download jekyll plug-ing gems. It shows jekyll version to install.
 ~~~~
 G:\project\github_pages>bundle install
-Fetching gem metadata from http://rubygems.org/...............
-Fetching gem metadata from http://rubygems.org/..
-Resolving dependencies....
+Fetching gem metadata from http://rubygems.org/... done
+Fetching gem metadata from http://rubygems.org/.. done
+Resolving dependencies..
 Fetching concurrent-ruby 1.1.5
 Installing concurrent-ruby 1.1.5
 Fetching i18n 0.9.5
@@ -140,14 +140,141 @@ Ruby Sass has reached end-of-life and should no longer be used.
 Post-install message from nokogiri:
 Nokogiri is built with the packaged libraries: libxml2-2.9.9, libxslt-1.1.33, zlib-1.2.11, libiconv-1.15.
 Post-install message from html-pipeline:
--------------------------------------------------
+
 Thank you for installing html-pipeline!
 You must bundle Filter gem dependencies.
 See html-pipeline README.md for more details.
 https://github.com/jch/html-pipeline#dependencies
--------------------------------------------------
+
 ~~~~
-## 1. create a jekyll site
+## 2.2 create a jekyll site
+* create a jekyll site in myblog directory
+~~~~
+bundle exec jekyll new myblog
+~~~~
+~~~~
+>bundle exec jekyll new myblog
+Running bundle install in G:/project/github_pages/myblog...
+  Bundler: Using concurrent-ruby 1.1.5
+  Bundler: Using i18n 0.9.5
+  Bundler: Using minitest 5.11.3
+  ...
+  Bundler: Using terminal-table 1.8.0
+  Bundler: Using github-pages 198
+  Bundler: Bundle complete! 1 Gemfile dependency, 85 gems now installed.
+  Bundler: Use `bundle info [gemname]` to see where a bundled gem is installed.
+New jekyll site installed in G:/project/github_pages/myblog.
+
+G:\project\github_pages>cd myblog
+
+G:\project\github_pages\myblog>dir
+ Volume in drive G is Data
+ Volume Serial Number is 98B7-C1A5
+
+ Directory of G:\project\github_pages\myblog
+
+2019-05-23  07:57 AM    <DIR>          .
+2019-05-23  07:57 AM    <DIR>          ..
+2019-05-23  07:57 AM                35 .gitignore
+2019-05-23  07:57 AM               398 404.html
+2019-05-23  07:57 AM               539 about.md
+2019-05-23  07:57 AM             1,069 Gemfile
+2019-05-23  07:57 AM               175 index.md
+2019-05-23  07:57 AM             1,652 _config.yml
+2019-05-23  07:57 AM    <DIR>          _posts
+               6 File(s)          3,868 bytes
+               3 Dir(s)  96,628,682,752 bytes free
+
+~~~~
+* execute jekyll
+~~~~
+>bundle exec jekyll serve
+~~~~
+~~~~
+G:\project\github_pages\myblog>bundle exec jekyll serve
+Configuration file: G:/project/github_pages/myblog/_config.yml
+            Source: G:/project/github_pages/myblog
+       Destination: G:/project/github_pages/myblog/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+       Jekyll Feed: Generating feed for posts
+                    done in 1.164 seconds.
+ Auto-regeneration: enabled for 'G:/project/github_pages/myblog'
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+
+  Terminate batch job (Y/N)? Y
+
+G:\project\github_pages\myblog>dir
+ Volume in drive G is Data
+ Volume Serial Number is 98B7-C1A5
+
+ Directory of G:\project\github_pages\myblog
+
+2019-05-23  07:57 AM    <DIR>          .
+2019-05-23  07:57 AM    <DIR>          ..
+2019-05-23  07:57 AM                35 .gitignore
+2019-05-23  07:57 AM    <DIR>          .sass-cache
+2019-05-23  07:57 AM               398 404.html
+2019-05-23  07:57 AM               539 about.md
+2019-05-23  07:57 AM             1,069 Gemfile
+2019-05-23  07:57 AM             1,864 Gemfile.lock
+2019-05-23  07:57 AM               175 index.md
+2019-05-23  07:57 AM             1,652 _config.yml
+2019-05-23  07:57 AM    <DIR>          _posts
+2019-05-23  07:57 AM    <DIR>          _site
+               7 File(s)          5,732 bytes
+               5 Dir(s)  96,628,461,568 bytes free
+~~~~
+## 2.3 create a jekyll site
+- create a new GitHub repository for jekyll site
+![git for windows install](/myblog/assets/images/git/create_myblog_repository.png)
+
+## 2.4 push local jekyll site to the remote GitHub repository
+~~~~
+G:\project\github_pages\myblog>git init
+Initialized empty Git repository in G:/project/github_pages/myblog/.git/
+
+G:\project\github_pages\myblog>git add .
+warning: LF will be replaced by CRLF in .gitignore.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in 404.html.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in _config.yml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in about.md.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in index.md.
+The file will have its original line endings in your working directory.
+
+G:\project\github_pages\myblog>git commit -m "initial upload"
+[master (root-commit) 8e948fc] initial upload
+ 7 files changed, 149 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 404.html
+ create mode 100644 Gemfile
+ create mode 100644 _config.yml
+ create mode 100644 _posts/2019-05-21-welcome-to-jekyll.markdown
+ create mode 100644 about.md
+ create mode 100644 index.md
+
+G:\project\github_pages\myblog>git remote add origin https://github.com/chasangchual/myblog.git
+
+G:\project\github_pages\myblog>git push -u origin master
+Counting objects: 10, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (10/10), 3.24 KiB | 473.00 KiB/s, done.bu
+Total 10 (delta 0), reused 0 (delta 0)
+To https://github.com/chasangchual/myblog.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+~~~~
+
+## 2.5 enable GitHub Pages
+- enable GitHub pages for the repository
+![enable git pages](/myblog/assets/images/git/enable_github_pages.png)
+
 
 # Work With GitHub Repository
 
