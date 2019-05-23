@@ -79,13 +79,74 @@ Which components shall be installed? If unsure press ENTER []
 Bundler provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed.
 
 Bundler is an exit from dependency hell, and ensures that the gems you need are present in development, staging, and production. Starting work on a project is as simple as ```bundle install```.
-~~~
-> gem install bundler
-~~~
+~~~~
+gem install bundler
+~~~~
 ![install gem bundler](/myblog/assets/images/ruby/install_bundler.png)
 
-# Prepare jekyll 
-## 1. install jekyll gems
+# 2. Prepare jekyll 
+## 2.1 install jekyll plugin gems
+* Create ```Gemfile``` with below
+~~~~
+source 'http://rubygems.org'
+gem 'github-pages', group: :jekyll_plugins
+~~~~
+* run ```bundle install``` to download jekyll plug-ing gems
+~~~~
+G:\project\github_pages>bundle install
+Fetching gem metadata from http://rubygems.org/...............
+Fetching gem metadata from http://rubygems.org/..
+Resolving dependencies....
+Fetching concurrent-ruby 1.1.5
+Installing concurrent-ruby 1.1.5
+Fetching i18n 0.9.5
+Installing i18n 0.9.5
+Using minitest 5.11.3
+Fetching thread_safe 0.3.6
+...
+Fetching jekyll 3.8.5
+Installing jekyll 3.8.5
+Fetching jekyll-avatar 0.6.0
+Installing jekyll-avatar 0.6.0
+Fetching jekyll-coffeescript 1.1.1
+Installing jekyll-coffeescript 1.1.1
+Fetching jekyll-commonmark 1.3.1
+Installing jekyll-commonmark 1.3.1
+...
+Installing unicode-display_width 1.6.0
+Fetching terminal-table 1.8.0
+Installing terminal-table 1.8.0
+Fetching github-pages 198
+Installing github-pages 198
+Bundle complete! 1 Gemfile dependency, 85 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+Post-install message from dnsruby:
+Installing dnsruby...
+  For issues and source code: https://github.com/alexdalitz/dnsruby
+  For general discussion (please tell us how you use dnsruby): https://groups.google.com/forum/#!forum/dnsruby
+Post-install message from sass:
+
+Ruby Sass has reached end-of-life and should no longer be used.
+
+* If you use Sass as a command-line tool, we recommend using Dart Sass, the new
+  primary implementation: https://sass-lang.com/install
+
+* If you use Sass as a plug-in for a Ruby web framework, we recommend using the
+  sassc gem: https://github.com/sass/sassc-ruby#readme
+
+* For more details, please refer to the Sass blog:
+  https://sass-lang.com/blog/posts/7828841
+
+Post-install message from nokogiri:
+Nokogiri is built with the packaged libraries: libxml2-2.9.9, libxslt-1.1.33, zlib-1.2.11, libiconv-1.15.
+Post-install message from html-pipeline:
+-------------------------------------------------
+Thank you for installing html-pipeline!
+You must bundle Filter gem dependencies.
+See html-pipeline README.md for more details.
+https://github.com/jch/html-pipeline#dependencies
+-------------------------------------------------
+~~~~
 ## 1. create a jekyll site
 
 # Work With GitHub Repository

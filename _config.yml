@@ -17,8 +17,8 @@ title: rubust, scalable and measurable software
 email: sangchual.cha@gmail.com
 description: "Sangchual's blog for sharing stories about software development, quality assuarance and deployment."
 twitter_username: username
-github_username: username
-minimal_mistakes_skin: dark
+github_username: chasangchual
+minimal_mistakes_skin: "dark"
 search: true
 
 # Build settings
