@@ -1,4 +1,5 @@
 ---
+# Only the main Sass file needs front matter (the dashes are enough) 
 ---
 
 @charset "utf-8";
@@ -6,17 +7,19 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-/* type scale */
-$type-size-1                  : 2.241em !default;
-$type-size-2                  : 1.753em !default;
-$type-size-3                  : 1.363em !default;
-$type-size-4                  : 1.05em !default;
-$type-size-5                  : 0.8em !default;
-$type-size-6                  : 0.6em !default;
-$type-size-7                  : 0.52em !default;
-$type-size-8                  : 0.5em !default;
+// https://github.com/mmistakes/minimal-mistakes/issues/1219#issuecomment-326809412
+html {
+    font-size: 12px; // originally 16px
+    
+    @include breakpoint($medium) {
+        font-size: 14px; // originally 18px
+    }
 
-h1 {
-    margin-top: 0;
-    font-size: 1.363em;
+    @include breakpoint($large) {
+        font-size: 16px; // originally 20px
+    }
+
+    @include breakpoint($x-large) {
+        font-size: 18px; // originally 22px
+    }
 }
