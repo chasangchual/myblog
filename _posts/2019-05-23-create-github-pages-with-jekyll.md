@@ -1,5 +1,5 @@
 ---
-title: "Steps to create a blog on GitHub Pages with jekyll"
+title: "Create jekyll based GitHub Pages with the remote theme"
 date: 2019-04-18T15:34:30-04:00
 categories:
   - blog
