@@ -1,17 +1,11 @@
 @import "minimal-mistakes";
 
-html {
-  font-size: 16px; // change to whatever
-
-  @include breakpoint($medium) {
-    font-size: 18px; // change to whatever
-  }
-
-  @include breakpoint($large) {
-    font-size: 20px; // change to whatever
-  }
-
-  @include breakpoint($x-large) {
-    font-size: 22px; // change to whatever
-  }
-}
+/* type scale */
+$type-size-1                  : 2.241em !default;
+$type-size-2                  : 1.753em !default;
+$type-size-3                  : 1.363em !default;
+$type-size-4                  : 1.05em !default;
+$type-size-5                  : 0.8em !default;
+$type-size-6                  : 0.6em !default;
+$type-size-7                  : 0.52em !default;
+$type-size-8                  : 0.5em !default;
