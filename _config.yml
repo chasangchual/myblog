@@ -11,22 +11,21 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                  : "minimal-mistakes-jekyll"
-remote_theme: "mmistakes/minimal-mistakes@4.16.3"
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-title_separator          : "-"
+# remote_theme           : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "rubust, scalable and measurable software"
+title                    : "Site Title"
 title_separator          : "-"
-name                     : "Sangchual Cha"
-description              : "Sangchual's blog for sharing stories about software development, quality assuarance and deployment."
-url                      : "https://chasangchual.github.io"
-baseurl                  : "/myblog"
-repository               : "chasangchual/myblog"
+name                     : "Your Name"
+description              : "An amazing website."
+url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : # the subpath of your site, e.g. "/blog"
+repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : " " 
+masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -107,11 +106,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Sangchual Cha"
+  name             : "Your Name"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Computer Software Engineer"
-  location         : "Toronto ON Canada"
-  email            : sangchual.cha@gmail.com
+  bio              : "I am an amazing person."
+  location         : "Somewhere"
+  email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -294,4 +293,4 @@ defaults:
       comments: # true
       share: true
       related: true
-
+      
