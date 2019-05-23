@@ -13,10 +13,10 @@ tags:
 # 1. Prerequisites
 ## 1.1 install git for window
   - download [git for windows](https://git-scm.com/download/win) and execute to install
-   ![git for windows install](assets/images/git_for_windows/install_screen.png)
+   ![git for windows install](/myblog/assets/images/git_for_windows/install_screen.png)
 ## 1.2 install Ruby
   - download [Ruby+Devkit 2.6.3-1 (x64)](https://rubyinstaller.org/downloads/) and execute to install
-   ![git for windows install](assets/images/ruby/install_screen.png)
+   ![git for windows install](/myblog/assets/images/ruby/install_screen.png)
   - install MSYS2 base after ruby installed.
     - select ```1 - MSYS2 base installation```. Once completed, just press ENTER.
 
@@ -82,7 +82,7 @@ Bundler is an exit from dependency hell, and ensures that the gems you need are 
 ~~~
 > gem install bundler
 ~~~
-![git for windows install](assets/images/ruby/install_bundler.png)
+![install gem bundler](/myblog/assets/images/ruby/install_bundler.png)
 
 # Prepare jekyll 
 ## 1. install jekyll gems
