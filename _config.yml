@@ -109,11 +109,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Sangchual Cha"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  bio              : "Computer Software Engineer"
+  location         : "Toronto ON Canada"
+  email            : sangchual.cha@gmail.com
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -161,6 +161,7 @@ footer:
 include:
   - .htaccess
   - _pages
+  - _posts
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -297,42 +298,3 @@ defaults:
       share: true
       related: true
 
-
-
-email: sangchual.cha@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Sangchual's blog for sharing stories about software development, quality assuarance and deployment.
-baseurl: "/myblog" # the subpath of your site, e.g. /blog
-url: "https://chasangchual.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: sangchual.cha@gmail.com
-github_username:  sangchual.cha@hotmail.com
-
-google_analytics: chasangchual.github.io.myblog
-# Build settings
-markdown: kramdown
-
-
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
-      
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
