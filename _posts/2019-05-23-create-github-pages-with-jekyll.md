@@ -236,12 +236,15 @@ Bundle complete! 1 Gemfile dependency, 85 gems now installed.
 Use `bundle info [gemname]` to see where a bundled gem is installed.
 ~~~~
 
-## 3.2 change _config.ymh to use remote_theme
+## 3.2 Change _config.ymh to use remote_theme
 remote_theme: mmistakes/minimal-mistakes
 
 # 4. Customize Site
-clone the mm-github-pages-starter repository
+
+## 4.1 clone the mm-github-pages-starter repository
+
 https://github.com/mmistakes/mm-github-pages-starter
+
 ~~~~
 G:\project\github_pages>git clone https://github.com/mmistakes/mm-github-pages-starter.git
 Cloning into 'mm-github-pages-starter'...
@@ -250,21 +253,29 @@ remote: Total 67 (delta 0), reused 0 (delta 0), pack-reused 67
 Unpacking objects: 100% (67/67), done.
 ~~~~
 
-copy files
+## 4.2 Copy files
+
+~~~~
 mm-github-pages-starter\_data\*
 mm-github-pages-starter\_pages\*
 mm-github-pages-starter\assets\*
 mm-github-pages-starter\_config.yml
+~~~~
 
-update _config.yml
+## 4.3 update _config.yml
+
+~~~~
 title: rubust, scalable and measurable software
 email: sangchual.cha@gmail.com
 description: "Sangchual's blog for sharing stories about software development, quality assuarance and deployment."
 twitter_username: username
 github_username: chasangchual
 minimal_mistakes_skin: "dark"
+~~~~
 
-update index.md
+## 4.4 update index.md
+
+~~~~
 ---
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
@@ -272,9 +283,11 @@ update index.md
 layout: posts
 author_profile: true
 ---
+~~~~
 
-decreate font size
-\assets\css\main.scss
+## 4.5 decrease font size
+
+crate a scss file, ````\assets\css\main.scss```` to overide style.
 
 ~~~~
 ---
