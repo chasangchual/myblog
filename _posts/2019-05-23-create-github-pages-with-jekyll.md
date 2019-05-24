@@ -324,3 +324,13 @@ pre {
     line-height: 1.5; // originally 1.8
 }
 ~~~~
+
+# 5. Open the GitHub Pages
+open the blog landing page.
+
+~~~~
+https://chasangchual.github.io/myblog
+~~~~
+
+![landing page](/myblog/assets/images/blog/landing.png)
+![post page](/myblog/assets/images/blog/post.png)
