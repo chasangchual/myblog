@@ -216,10 +216,10 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 # 3. Apply minimal-mistakes remote theme
 ## 3.1 Add remote theme plugin
-https://rubygems.org/search?utf8=%E2%9C%93&query=jekyll-remote-theme
-gem 'jekyll-remote-theme', '~> 0.3.1'
+* wer are going to use jekyll-remote-theme ```https://rubygems.org/search?utf8=%E2%9C%93&query=jekyll-remote-theme```
+  * add ````gem 'jekyll-remote-theme', '~> 0.3.1'```` to Gemfile
+  * run ````bundle install```` as to download jekyll-remote-theme gem
 
-bundle install
 ~~~~
 G:\project\github_pages>bundle install
 Fetching gem metadata from http://rubygems.org/...............
@@ -236,8 +236,12 @@ Bundle complete! 1 Gemfile dependency, 85 gems now installed.
 Use `bundle info [gemname]` to see where a bundled gem is installed.
 ~~~~
 
-## 3.2 Change _config.ymh to use remote_theme
+## 3.2 use minimal-mistakes in remote mode
+change _config.yml to use minimal-mistakes as remote_theme. and comment ount ````#theme: ... ````
+
+~~~~
 remote_theme: mmistakes/minimal-mistakes
+~~~~
 
 # 4. Customize Site
 
