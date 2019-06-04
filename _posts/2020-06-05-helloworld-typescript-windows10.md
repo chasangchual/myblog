@@ -1,87 +1,85 @@
 ---
-title: Tail recursion in Java
-date: 2019-04-24T15:34:30-04:00
+title: Gettting started TypeScript in Windows 10 sub system
+date: 2019-06-04T15:34:30-04:00
 categories:
-  - Java
+  - Web front-end
 tags:
-  - java
-  - functional programming
-  - tail recursion
+  - web
+  - typescript
+  - react
 ---
 
-Once we open the door way to the functional programming, the first rabbit you met could be tail call recursion. When I read about tail recursion, I did not realize how tail call is connected with functional programming at that moment. If there was a sort of hello tail call !!, I should have started functional programming earlier. Let's see Hello Tail Call !! sample code in Java below.
-
-----------
-# What is Tail Call
-
-## Tail Call
->Wiki says that In computer science, a tail call is a subroutine call performed as the final action of a procedure. If a tail call might lead to the same subroutine being called again later in the call chain, the subroutine is said to be tail-recursive, which is a special case of recursion. Tail recursion (or tail-end recursion) is particularly useful, and often easy to handle in implementations.
-https://en.wikipedia.org/wiki/Tail_call
-
-So, now you have a clear definition on Tail Call ? We are Java programmers. Give me Java codes.
-
-## Codes
-
-Let me define a function, sum(x)  as below. 
+## Add a New User
+### (1) add user
 ```
-sum(10) = 10 + 9 + 8 + ... + 1
+# adduser [username]
+```
+### (2) add the new user into sudoers
+open ```/etc/sudoers``` and add ```[username]  ALL=(ALL:ALL) ALL``` in the # User privilege specification section
+### (3) update ```apt-get```
+```
+sudo apt update && sudo apt -y upgrade && sudo apt autoremove
 ```
 
-and write a method.
-```java
-public static Long sum(Integer n) {
-	if(n == 1) return 1L ;
-	else return n + sum(n-1) ;
-}
-```
-Looks OK for now. Do you know what is sum(10000) ? Let's get my new method work to answer it. 
+## Install nodejs with nvm (node version manager)
+https://yoember.com/nodejs/the-best-way-to-install-node-js/
 
+### (1) install nvm (https://github.com/nvm-sh/nvm)
 ```
-Exception in thread "main" java.lang.StackOverflowError
-	at java.lang.Number.<init>(Number.java:49)
-	at java.lang.Integer.<init>(Integer.java:659)
-	at java.lang.Integer.valueOf(Integer.java:642)
-	at com.surefor.functional.HelloTailCall.sum(HelloTailCall.java:9)
-	at com.surefor.functional.HelloTailCall.sum(HelloTailCall.java:9)
-	at com.surefor.functional.HelloTailCall.sum(HelloTailCall.java:9)
-	at com.surefor.functional.HelloTailCall.sum(HelloTailCall.java:9)
-	at com.surefor.functional.HelloTailCall.sum(HelloTailCall.java:9)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 ```
-Hmm.. It died with **sjava.lang.StackOverflowError** actually as expected. But no worries, it is time to dive deeper. Let me share another methods to do same thing but run with tail call recursion.
-
-```java
-    public static Long sumTail(Integer n) {
-        return sumTail(n, 0L) ;
-    }
-
-    private static Long sumTail(Integer n, Long k) {
-        if(n == 1) return k + n;
-        else return sumTail(n-1, n + k) ;
-    }
+Then start a new Ubuntu terminal
+### (2) install nodej
+```
+sangchual@DESKTOP-NQFH4UO:~$ nvm list
+            N/A
+iojs -> N/A (default)
+node -> stable (-> N/A) (default)
+unstable -> N/A (default)
+sangchual@DESKTOP-NQFH4UO:~$ nvm ls-remote
+        v0.1.14
+        v0.1.15
+        …
+        v12.0.0
+        v12.1.0
+        v12.2.0
 ```
 ```
-System.out.println(HelloTailCall.sumTail(10000)) ;
-50005000
+sangchual@DESKTOP-NQFH4UO:~$ nvm install 12.2.0
+Downloading and installing node v12.2.0...
+Downloading https://nodejs.org/dist/v12.2.0/node-v12.2.0-linux-x64.tar.xz...
+#################################################################################################################### 100.0%
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v12.2.0 (npm v6.9.0)
+Creating default alias: default -> 12.2.0 (-> v12.2.0)
+sangchual@DESKTOP-NQFH4UO:~$ nvm use 12.2.0
+Now using node v12.2.0 (npm v6.9.0)
+sangchual@DESKTOP-NQFH4UO:~$ nvm alias default 12.2.0
+default -> 12.2.0 (-> v12.2.0)
+sangchual@DESKTOP-NQFH4UO:~$ node -v
+v12.2.0
 ```
-This time we got the answer. You could say that So what, I can read Java code but it does not touch engineer's brain.  Probably there are tens of pages to explain how it works and how they are different. Too much, right ? 
+### (2) install npm (node package manager)
+```
+sangchual@DESKTOP-NQFH4UO:~$ npm install -g npm
+/home/sangchual/.nvm/versions/node/v12.2.0/bin/npm -> /home/sangchual/.nvm/versions/node/v12.2.0/lib/node_modules/npm/bin/npm-cli.js
+/home/sangchual/.nvm/versions/node/v12.2.0/bin/npx -> /home/sangchual/.nvm/versions/node/v12.2.0/lib/node_modules/npm/bin/npx-cli.js
++ npm@6.9.0
+updated 1 package in 106.21s
+sangchual@DESKTOP-NQFH4UO:~$ npm -v
+6.9.0
+```
+### (3) increases the amount of inotify watche
+One more thing! Don’t forget to run the following command, which increases the amount of inotify watches.
+```
+sangchual@DESKTOP-NQFH4UO:~$ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+[sudo] password for sangchual:
+fs.inotify.max_user_watches=524288
+fs.inotify.max_user_watches = 5
+```
 
-## Explained 
-I would like say that in here, just focus on recursion exit condition. Meaning what you return. Every magic comes from **what you return**.
-
-Back to the first code snippet, it populated  stack over flow because it returns **_n + sum(n-1)_**.
-
-> DO NOT _return n + sum(n-1) ;_
-
- Java compiler generates byte codes to stack every recursion call in order to calculate **_n + ..._** . if you want to tell Java do tail call optimization, you have to just simply call the function.  That is it.
-
-Next, can you find difference in recursion exit condition ? Tail call recursion returns _actual answer_ when it meets exit condition. 
-
-> _if(n == 1) return k + n ;_
-
-In the tail call codes, **_k_** is answer until previous recursion call and **_k+n_** is the answer in current call.
-
-One more thing, in functional programming paradigm it passes a function as a parameter when it calls another function. Given **sumTail(n-1, n + k)** we passe **+** operator as a function.
-
- 
-
->  __The first step in functional programming is to design proper returning value.__
+## Create a TypeScript HelloWorld project
+```
+npx create-react-app helloworld-ts --typescript 
+```
